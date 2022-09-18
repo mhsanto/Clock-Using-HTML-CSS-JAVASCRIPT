@@ -1,0 +1,149 @@
+@font-face {
+    src: url(Compact.ttf);
+    src: url(WaltoNeue-Italic.ttf);
+    font-family: compact;
+    font-family: WaltoNeue;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    font-family: sans-serif;
+    margin: 0;
+    font-family: WaltoNeue;
+    /* font-family: compact; */
+}
+
+body {
+    background-color: #97b3d4;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.clock {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid;
+    z-index: 8;
+}
+
+.clock .hand {
+    --rotation: 0;
+    border-radius: 12px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+
+}
+.clock::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    z-index: 100;
+    background-color: black;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+.hand.minute{
+    width: 6px;
+    height: 40%;
+    background-color: #DCC435FF;
+}
+.hand.hour{
+    width: 10px;
+    height: 30%;
+    background-color: #FF0049FF;
+}
+
+.clock .number {
+    --number: 0;
+    position: absolute;
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: rotate(var(--number));
+}
+
+.number.number1 {
+    --number: 30deg;
+}
+
+.number.number2 {
+    --number: 60deg;
+}
+
+.number.number3 {
+    --number: 90deg;
+}
+
+.number.number4 {
+    --number: 120deg;
+}
+
+.number.number5 {
+    --number: 150deg;
+}
+
+.number.number6 {
+    --number: 180deg;
+}
+
+.number.number7 {
+    --number: 210deg;
+}
+
+.number.number8 {
+    --number: 240deg;
+}
+
+.number.number9 {
+    --number: 270deg;
+}
+
+.number.number10 {
+    --number: 300deg;
+}
+
+.number.number11 {
+    --number: 330deg;
+}
+
+.six {
+    transform: rotate(180deg);
+}
+
+.three {
+    transform: rotate(-90deg);
+}
+
+.nine {
+    transform: rotate(90deg);
+}
+
+.two {
+    transform: rotate(-60deg);
+}
+
+.eight {
+    transform: rotate(100deg);
+}
