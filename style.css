@@ -18,8 +18,9 @@
 
 body {
     background-color: #97b3d4;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     height: 100vh;
 }
 
